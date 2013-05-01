@@ -1,0 +1,302 @@
+<!DOCTYPE html><!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]--><!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]--><!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Account Online Registration Prototype
+    </title>
+    <script src="js/modernizr.js"></script>
+    <link rel="stylesheet" href="css/global.css">
+  </head>
+  <body>
+    <header role="banner" class="main">
+      <nav class="login"><a href="#">Log In</a><a href="#">En Espa&ntilde;ol</a><a href="#">Safe &amp; Secure</a></nav><a href="index.html"><img src="images/ao_registration_homedepot_logo.jpg" alt="The Home Depot"></a>
+      <h1>Account Online Registration</h1>
+    </header>
+    <nav> <a href="#one">1. Verify</a><a href="#two" class="active">2. Profile</a><a href="#three">3. Security</a><a href="#four">4. Preferences      </a></nav>
+    <section role="main" class="main">
+      <form method="POST" novalidate action="complete.html">
+        <fieldset id="profile">
+          <article>
+            <h1>Create Your Profile</h1>
+            <div data-validate="email" class="field required">
+              <label for="email_address">Email Address</label>
+              <input type="email" id="email_address" name="email_address">
+            </div>
+            <div data-validate="phone" class="field mobile_phone required">
+              <label for="mobile_phone">Mobile Phone</label>
+              <input type="tel" id="mobile_phone" name="mobile_phone">
+            </div>
+            <div data-validate="text" class="field create_user required">
+              <label for="create_user">Create Username</label>
+              <input type="text" id="create_user" name="create_user">
+              <div class="tool_tip">
+                <div class="mask"></div><img src="images/ao_registration_create_username_error.png" alt="create password error" class="validation_tooltip front">
+              </div>
+            </div>
+            <div data-validate="password" class="field create_password required">
+              <label for="create_password">Create a Password</label>
+              <input type="password" id="create_password" name="create_password">
+              <div class="tool_tip">
+                <div class="mask"></div><img src="images/ao_registration_create_password_error.png" alt="create password error" class="validation_tooltip front">
+              </div>
+            </div>
+            <div data-validate="match" data-matched-field-id="create_password" class="field required">
+              <label for="confirm_password">Confirm Password</label>
+              <input type="password" id="confirm_password" name="confirm_password">
+            </div>
+            <div class="field">
+              <input id="next" type="submit" value="Next &#9658;" class="button">
+            </div>
+          </article>
+        </fieldset>
+        <fieldset id="security">
+          <article>
+            <h1>Choose Your Security Questions</h1>
+            <div class="field required">
+              <label for="first_question">1</label>
+              <select>
+                <option value="-1">Question</option>
+                <option value="What was your high school mascot?">What was your high school mascot?</option>
+                <option value="What high school did you attend?">What high school did you attend?</option>
+                <option value="What is your mother’s maiden name?">What is your mother’s maiden name?</option>
+              </select>
+              <input type="text" id="first_question" name="first_question" placeholder="Answer">
+            </div>
+            <hr>
+            <div class="field required">
+              <label for="second_question">2</label>
+              <select>
+                <option value="-1">Question</option>
+                <option value="What was your high school mascot?">What was your high school mascot?</option>
+                <option value="What high school did you attend?">What high school did you attend?</option>
+                <option value="What is your mother’s maiden name?">What is your mother’s maiden name?</option>
+              </select>
+              <input type="text" id="second_question" name="second_question" placeholder="Answer">
+            </div>
+            <hr>
+            <div class="field required">
+              <label for="third_question">3</label>
+              <select>
+                <option value="-1">Question</option>
+                <option value="What was your high school mascot?">What was your high school mascot?</option>
+                <option value="What high school did you attend?">What high school did you attend?</option>
+                <option value="What is your mother’s maiden name?">What is your mother’s maiden name?</option>
+              </select>
+              <input type="text" id="third_question" name="third_question" placeholder="Answer">
+            </div>
+            <hr>
+            <div class="field">   
+              <input id="next" type="submit" value="Next &#9658;" class="button">
+            </div>
+          </article>
+        </fieldset>
+        <fieldset id="preferences">
+          <article>
+            <h1>Personalize Your Account</h1>
+            <p class="sectionDesc">Spend a few moments setting your preferences to get the most from your Account Online.</p>
+            <hr>
+            <section id="paperless" class="edited"> 
+              <figure><img src="images/ao_registration_preferences_paperless_billing.png" alt="Paperless Billing"></figure>
+              <header>
+                <h2>Paperless Billing Is Included</h2>
+                <p>Your statements and letters will be emailed to you.</p><a href="#" class="trigger">&#9658; SHOW PAPERLESS BILLING DETAILS</a>
+                <button>Add / Edit</button>
+              </header>
+              <fieldset>
+                <div class="field data">
+                  <label for="email_address">You are currently enrolled in Paperless Billing at this email address:</label>
+                  <input type="email" id="email_address" name="email_address" placeholder="john.robertson@domain.com">
+                </div>
+                <div class="field action"><a class="remove">X Remove Paperless Billing</a><a>Cancel</a><a href="#" class="save">Save</a></div>
+              </fieldset>
+            </section>
+            <hr>
+            <section id="alerts">    
+              <figure><img src="images/ao_registration_preferences_account_alerts.png" alt="Account Alerts"></figure>
+              <header>
+                <h2>Account Alerts</h2>
+                <p>Receive alerts by email and text message.</p><a href="#" class="trigger">&#9658; SHOW ACCOUNT ALERT DETAILS </a>
+                <button>Add / Edit</button>
+              </header>
+              <fieldset class="description">
+                <p> Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortissociis natoque penatibus et magnis parturient.</p>
+              </fieldset>
+              <fieldset class="data">
+                <header>
+                  <p>Send alerts for</p>
+                  <p>email</p>
+                  <p>sms</p>
+                </header>
+                <hr>
+                <div class="field">
+                  <label><em>Close to Credit Limit</em> if my balance to credit limit is within:</label>
+                  <select>
+                    <option value="$200">$200</option>
+                    <option value="$300">$300</option>
+                    <option value="$400">$400  </option>
+                  </select>
+                  <input type="checkbox" name="email">
+                  <input type="checkbox" name="sms">
+                </div>
+                <hr>
+                <div class="field">
+                  <label><em>High Balance</em> if my balance is higher than:</label>
+                  <select>
+                    <option value="$2000">$2000</option>
+                    <option value="$3000">$3000</option>
+                    <option value="$4000">$4000  </option>
+                  </select>
+                  <input type="checkbox" name="email">
+                  <input type="checkbox" name="sms">
+                </div>
+                <hr>
+                <div class="field">
+                  <label><em>Current Balance</em> of my account every:</label>
+                  <select>
+                    <option value="Month">Month</option>
+                    <option value="Week">Week</option>
+                    <option value="Year">Year </option>
+                  </select>
+                  <input type="checkbox" name="email">
+                  <input type="checkbox" name="sms">
+                </div>
+                <hr>
+                <div class="field">
+                  <label><em>Payment Due</em> if a payment is due within:</label>
+                  <select>
+                    <option value="1 Week">1 Week</option>
+                    <option value="2 Week">2 Week</option>
+                    <option value="3 Week">3 Week  </option>
+                  </select>
+                  <input type="checkbox" name="email">
+                  <input type="checkbox" name="sms">
+                </div>
+                <hr>
+                <div class="field fix">
+                  <label><em>Payment Past Due</em></label>
+                  <input type="checkbox" name="email">
+                  <input type="checkbox" name="sms">
+                </div>
+                <hr>
+                <div class="field fix">
+                  <label><em>Payment Posted</em></label>
+                  <input type="checkbox" name="email">
+                  <input type="checkbox" name="sms">
+                </div>
+                <hr>
+                <div class="field fix">
+                  <label><em>Statement Ready</em></label>
+                  <input type="checkbox" name="email">
+                  <input type="checkbox" name="sms">
+                </div>
+                <hr>
+                <div class="field checkbox required">
+                  <input type="checkbox" name="agree_terms" id="agree_terms">
+                  <label for="agree_terms">
+                     
+                    I agree to all Account Alerts <a href="#">Terms and Conditions</a>
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <div class="field action"><a>Cancel<a href="#" class="save">Save</a></a></div>
+              </fieldset>
+            </section>
+            <hr>
+            <section id="onlinePayments">  
+              <figure><img src="images/ao_registration_preferences_online_payments.png" alt="Online Payments"></figure>
+              <header>
+                <h2>Online Payments</h2>
+                <p>Pay online from your bank account.</p><a href="#" class="trigger">&#9658; SHOW ONLINE PAYMENT DETAILS</a>
+                <button>Add / Edit</button>
+              </header>
+              <fieldset class="data">
+                <div class="field top">
+                  <h4>ACCOUNT TYPE</h4>
+                  <input type="radio" id="checking" name="account_type" value="checking">
+                  <label for="checking">Checking</label>
+                  <input type="radio" id="savings" name="account_type" value="savings">
+                  <label for="savings">Savings</label>
+                </div><img src="images/ao_registration_preferences_online_payments_check.png" alt="check">
+                <div class="field">
+                  <label for="routing_number">Routing Number</label>
+                  <input type="text" id="routing_number" name="routing_number">
+                </div>
+                <div class="field">
+                  <label for="account_number">Account Number</label>
+                  <input type="text" id="account_number" name="account_number">
+                </div>
+                <div class="field">
+                  <label for="confirm_account_number">Confirm Account Number</label>
+                  <input type="text" id="confirm_account_number" name="confirm_account_number">
+                </div>
+                <div class="field checkbox">
+                  <input type="checkbox" name="agree_terms" id="agree_terms">
+                  <label for="agree_terms">
+                     
+                    I agree to the Online Payments <a href="#">Terms and Conditions</a>
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset> 
+                <div class="field action"><a>Cancel</a><a href="#" class="save">Save</a></div>
+              </fieldset>
+            </section>
+            <hr>
+            <div data-validate="checked" data-error-message="You must agree to the Terms and Conditions" class="field terms checkbox required">
+              <input type="checkbox" name="agree_terms" id="agree_terms">
+              <label for="agree_terms">
+                 
+                I agree to the <a data-modal-id="termsContent">Terms and Conditions</a>
+                <div id="termsContent" class="modal">
+                  <h1>Account Online Terms and Conditions<a>PRINT</a></h1>
+                  <hr>
+                  <p>Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                  <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+              </label>
+            </div>
+            <div class="field">
+              <input type="submit" value="Register" class="button">
+            </div>
+          </article>
+        </fieldset>
+        <aside id="profile_widget">
+          <div class="profile-box">
+            <h3>Welcome, John</h3>
+            <p>Card Number   &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 1234</p><a>Get Help</a>
+          </div>
+          <div data-fielset="profile" class="promo-box"><img src="images/ao_registration_preferences_paperless_billing.png" alt="Paperless Billing">
+            <h4 class="profile">Good for the planet</h4>
+            <p>Don't waste paper on an empty statement. Print your bill whenever you need it.</p>
+          </div>
+          <div data-fielset="security" class="promo-box"><img src="images/ao_registration_preferences_account_alerts.png" alt="Account Alerts">
+            <h4 class="security">We've Got Your Back</h4>
+            <p>Set up alerts and reminders to stay on top of your bills and account activity.</p>
+          </div>
+          <div data-fielset="preferences" class="promo-box"><img src="images/ao_registration_preferences_safe_and_secure.png" alt="Safe &amp; Secure">
+            <h4 class="preferences">Safe &amp; Secure</h4>
+            <p>You can rest easy that your Account Online will always remain safe and secure.</p>
+          </div>
+        </aside>
+      </form>
+      <hr>
+      <footer role="contentinfo">
+        <nav><a href="#">Privacy </a>|<a href="#" data-modal-id="termsContent">Terms and Conditions</a></nav><img src="images/ao_registration_verisign_static_logo.jpg" alt="verisign static logo">
+        <p>Copyright &copy; 2013 Citigroup</p>
+      </footer>
+    </section>
+    <div id="termsContent" class="modal">
+      <h1>Account Online Terms and Conditions<a>PRINT</a></h1>
+      <hr>
+      <p>Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+      <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/all.js"></script>
+  </body>
+</html>

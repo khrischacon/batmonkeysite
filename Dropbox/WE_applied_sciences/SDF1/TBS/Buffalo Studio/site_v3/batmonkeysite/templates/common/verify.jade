@@ -1,0 +1,30 @@
+fieldset#verify
+
+  article
+
+    h1 Enter Your Information
+
+    .field
+      label(for="name_card") Name on card
+      input(type="text", id="name_card",name="name_card", placeholder='First Last')
+
+    .field
+      label(for="card_number") Card number
+      input(type="password", id="name_card",name="name_card", maxlength="16",)
+
+    .field.digits#cvv
+      label(for="three_digit") 3 Digit CVV
+      input.digits(type="password", id="three_digit", maxlength="3", name="three_digit")
+
+    .field.digits#ssn
+      label(for="last_digits") Last 4 digits of ssn
+      input(type="password", id="last_digits", maxlength="4",name="last_digits")
+      .tool_tip
+        img.validation_tooltip(src='images/ao_registration_verify_ssn_error.png', alt="create password error", class="front")
+
+    .field
+      input.button(type="submit", value="Verify")
+
+  aside#card_imagery
+    img(src='images/ao_registration_card_front.png', alt="card", class="front")
+    img(src='images/ao_registration_card_back.png', alt="card", class="back")

@@ -1,0 +1,64 @@
+!!!
+//if lt IE 7
+  <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+//if IE 7
+  <html class="no-js lt-ie9 lt-ie8">
+//if IE 8
+  <html class="no-js lt-ie9">
+//[if gt IE 8]><!
+html(class='no-js')
+  //<![endif]
+  head
+    block head
+      meta(charset='utf-8')
+      title
+        block title
+          = locals.name
+      script(src=href='js/modernizr.js')
+      link(rel='stylesheet', href='css/global.css')
+  body
+
+    header.main(role="banner")
+      nav.login
+        a(href="#") Log In
+        a(href="#") En Espa&ntilde;ol
+        a(href="#") Safe &amp; Secure
+      a(href="index.html")
+        img(src='images/ao_registration_homedepot_logo.jpg', alt="The Home Depot")
+      h1 Account Online Registration
+      
+
+    block localnav
+
+    section.main(role="main")
+
+      block main
+
+
+      footer(role="contentinfo")
+
+        nav
+          a(href="#") Privacy 
+          |
+          a(href="#", data-modal-id="termsContent") Terms and Conditions
+
+
+        img(src='images/ao_registration_verisign_static_logo.jpg', alt='verisign static logo')
+
+        p Copyright &copy; 2013 Citigroup
+
+
+    #termsContent.modal
+      h1 Account Online Terms and Conditions
+        a PRINT
+      hr
+      p Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+
+      p Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+      p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+      
+   
+    script(src='js/jquery.min.js')
+    script(src='js/all.js')

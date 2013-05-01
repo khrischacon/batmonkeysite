@@ -1,0 +1,18 @@
+extends master
+
+block localnav 
+  nav 
+    a.active(href="#one") 1. Verify
+    a(href="#two") 2. Profile
+    a(href="#three") 3. Security
+    a(href="#four") 4. Preferences      
+
+block main    
+  form(method="POST", novalidate=true, action="account.html")
+    include common/verify
+  hr
+
+
+
+
+

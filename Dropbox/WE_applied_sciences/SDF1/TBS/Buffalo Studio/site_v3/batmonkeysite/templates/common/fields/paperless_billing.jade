@@ -1,0 +1,19 @@
+section#paperless.edited  
+        
+  figure
+    img(src='images/ao_registration_preferences_paperless_billing.png', alt="Paperless Billing")
+
+  header
+    h2 Paperless Billing Is Included
+    p Your statements and letters will be emailed to you.
+    a.trigger(href="#") &#9658; SHOW PAPERLESS BILLING DETAILS
+    button Add / Edit
+
+  fieldset
+    .field.data
+      label(for="email_address") You are currently enrolled in Paperless Billing at this email address:
+      input(type="email", id="email_address",name="email_address", placeholder="john.robertson@domain.com")
+    .field.action
+      a.remove X Remove Paperless Billing
+      a Cancel
+      a(href="#").save Save

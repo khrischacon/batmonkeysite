@@ -1,0 +1,35 @@
+fieldset#security
+
+  article
+
+      h1 Choose Your Security Questions
+
+      .field.required
+        label(for="first_question") 1
+        select
+          option(value='-1') Question
+          option(value='What was your high school mascot?') What was your high school mascot?
+          option(value='What high school did you attend?') What high school did you attend?
+          option(value='What is your mother’s maiden name?') What is your mother’s maiden name?
+        input(type="text", id="first_question",name="first_question", placeholder="Answer")
+      hr
+      .field.required
+        label(for="second_question") 2
+        select
+          option(value='-1') Question
+          option(value='What was your high school mascot?') What was your high school mascot?
+          option(value='What high school did you attend?') What high school did you attend?
+          option(value='What is your mother’s maiden name?') What is your mother’s maiden name?
+        input(type="text", id="second_question",name="second_question", placeholder="Answer")
+      hr
+      .field.required
+        label(for="third_question") 3
+        select
+          option(value='-1') Question
+          option(value='What was your high school mascot?') What was your high school mascot?
+          option(value='What high school did you attend?') What high school did you attend?
+          option(value='What is your mother’s maiden name?') What is your mother’s maiden name?
+        input(type="text", id="third_question",name="third_question", placeholder="Answer")
+      hr
+      .field    
+        input#next.button(type="submit", value="Next &#9658;")

@@ -1,0 +1,9 @@
+{
+  "locals": {
+    "url": "http://localhost:8080",
+    "name": "Account Online Registration Prototype",
+    "owner": "Citi Retail Services",
+    "description": "Servicing",
+    "index_articles": 3
+  }
+}

@@ -1,0 +1,35 @@
+fieldset#profile
+ 
+  article
+  
+    h1 Create Your Profile
+
+    .field.required(data-validate="email")
+      label(for="email_address") Email Address
+      input(type="email", id="email_address",name="email_address")
+
+    .field.mobile_phone.required(data-validate="phone")
+      label(for="mobile_phone") Mobile Phone
+      input(type="tel", id="mobile_phone",name="mobile_phone")
+
+    .field.create_user.required(data-validate="text")
+      label(for="create_user") Create Username
+      input(type="text", id="create_user",name="create_user")
+      .tool_tip
+        .mask
+        img.validation_tooltip(src='images/ao_registration_create_username_error.png', alt="create password error", class="front")
+
+    .field.create_password.required(data-validate="password")
+      label(for="create_password") Create a Password
+      input(type="password", id="create_password",name="create_password")
+      .tool_tip
+        .mask
+        img.validation_tooltip(src='images/ao_registration_create_password_error.png', alt="create password error", class="front")
+
+    .field.required(data-validate="match", data-matched-field-id="create_password")
+      label(for="confirm_password") Confirm Password
+      input(type="password", id="confirm_password", name="confirm_password")
+
+    .field
+      input#next.button(type="submit", value="Next &#9658;")
+

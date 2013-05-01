@@ -1,0 +1,20 @@
+extends master
+
+block localnav 
+  nav 
+    //- a(href="#one") 1. Verify
+    //- a(href="#two") 2. Profile
+    //- a(href="#three") 3. Security
+    //- a(href="#four") 4. Preferences//
+    a.complete(href="#five") &#10003; Registration Complete
+
+
+block main    
+  form(method="POST", novalidate=true)
+    include common/congratulations
+  hr
+
+
+
+
+

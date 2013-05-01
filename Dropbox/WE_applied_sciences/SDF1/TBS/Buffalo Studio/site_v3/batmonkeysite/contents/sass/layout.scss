@@ -1,0 +1,878 @@
+
+//================================ global bits:
+
+body {
+    background:url(../images/ao_registration_background.png) repeat; text-align:center; font-family:'helveticaNeu', Arial, Helvetica, sans-serif; font-size:1em; color:$gray;
+    
+    > * { width:980px; margin:0 auto; text-align:left; }
+}
+
+h1 { font-size:2em; }
+
+h2 { font-size:1.5em; }
+
+h3 { font-size:1.25em; }
+
+h4 { font-size:0.85em; }
+
+p, a, label { font-family:Arial, Helvetica, sans-serif; }
+
+h1, h2, h3, h4, p { padding-top:2px }
+
+a { outline:none; color:#e15800; text-decoration:none; cursor:pointer; }
+
+input { outline:none; }
+
+select { border:solid 2px #dedede; outline:none; }
+
+select:focus { border:solid 2px #666666; }
+
+//================================ main header:
+
+body > header {
+    
+    background:#444; padding:10px 31px 31px 41px; width:908px; height:119px; font-weight:normal;
+    
+    h1 { font-size:2.69em; color:$white; @include inline-block; font-weight:normal; margin-left:38px; }
+    
+    img { margin-top:14px; }
+    
+    nav.login { display:block; width:100%; height:25px; text-align:right; font-size:0.875em; margin-top:0; 
+        
+        a { @include inline-block; padding-top:4px; height:25px; color:$white; margin-right:18px; margin-top:5px;  }
+        
+        a:last-child { margin-right:0; background:url(../images/ao_registration_safe_secure_icon.png) no-repeat 0 0; padding-left:17px; }
+    }
+}
+
+//================================ Step Navigation:
+
+body > nav {
+    
+    display:block; background:#808080; border-top:solid 1px #ffffff; width:980px; height:38px; padding:0; font-size:0.85em;
+    
+    a { @include inline-block; font-weight:normal; cursor:default; color:$light-gray; background:#808080; text-decoration:none; padding:10px 40px 10px 38px; width:auto; height:18px; border-right:solid 1px $white; @include transition((padding-right 1s, background 1s));}
+    
+    a:last-child { border:none; }
+    
+    a.active { background:#e15800; color:$white; width:auto; padding-right:44.593%; }
+    
+    a.complete { background:#e15800; color:$white; width:505px; padding-right:44.593%; }
+}
+
+//================================ main section
+
+body > section.main {
+    
+    @include inline-block; background:#fff; position:relative; width:900px; padding:50px 40px; text-align:justify;
+
+    footer nav a:hover { text-decoration:underline; }
+}
+
+form > fieldset > {
+
+     article, aside { @include inline-block; }
+}
+
+form > fieldset#verify > {
+
+     article { 
+        
+        width:50%;
+
+        label:before { content:none; }
+
+        #ssn {
+
+            .tool_tip {
+                
+                top:5px; left:167px; z-index:10;
+                
+                // img {  }   
+            }
+        }
+     }
+
+     aside { width:49%;}   
+}
+
+form > fieldset#profile >, form > fieldset#security >, form > fieldset#preferences > {
+     
+     article { width:90%; }
+}
+
+form > fieldset#profile > { 
+
+    article { 
+
+        height:auto;
+
+        input { width:45%; }
+        
+        input[type="submit"] { width:140px; font-size:1.2em; }
+    }
+}
+
+form > fieldset#security > { 
+
+    article { 
+
+        @include inline-block; text-align:justify; vertical-align:middle;  
+
+        h1 { margin-bottom:25px }
+
+        .field {
+            &.required {
+
+                label{ background:$dark-gray; }
+
+                label:before { content:none; }    
+
+                &.completed label{ background:$light-green; }
+
+                &.completed label:before { content:none; }
+
+            } 
+
+            label { @include inline-block; font-size:1.5em; width:42px; height:33px; padding-top:9px; color:$white; background:$gray; @include circle; vertical-align:middle; text-align:center; }
+        
+            select { @include inline-block; margin-left:10px; margin-right:10px; border:solid 2px #DEDEDE; height:34px; }
+            
+            select:focus { border:solid 2px #666666; }
+
+            select, input { width:40%; font-size:0.875em; }
+        
+            input[type="submit"] { width:140px; font-size:1.2em; margin-top:15px; }
+        }       
+    }
+}
+
+form > fieldset#preferences { 
+    
+    font-size:0.875em;
+
+    aside {  
+       .promo-box {  
+            h4 { color:$blue-gray; }
+       } 
+    }
+
+    article { 
+        
+        @include inline-block;
+        
+        h1 { margin-left:14px; }
+
+        p {  width:400px; line-height:1.25em; }
+
+        p.sectionDesc { margin-left:14px; margin-bottom:25px; }
+        
+        hr { width:519px; margin:5px 0 0; }
+
+        section {
+    
+            margin-top:0; margin-bottom:10px; width:87%; height:auto; @include inline-block; text-align:left; position:relative; vertical-align:middle; padding-top:25px; padding-left:75px; padding-bottom:35px;
+
+            figure {
+                
+                position:absolute; top:25px; left:11px; 
+            }
+
+            header {
+
+                h2 { padding-bottom:1px }
+
+                p { margin-bottom:3px; }
+
+                button { position:absolute; width:82px; height:32px; top:0; right:17px; border:none; text-indent:-9999999px; cursor:pointer;background:url(../images/ao_registration_preferences_add_button.png) no-repeat top; }
+
+                button:hover { background-position:bottom }
+
+                a.trigger { text-transform:uppercase; font-size:0.875em; }
+
+            }
+
+            &.edited header button {background:url(../images/ao_registration_preferences_edit_button.png) no-repeat top;}
+
+            &.edited header button:hover { background-position:bottom; }
+
+            .data {
+
+                background:#f2f2f2; @include round-corner; border:1px solid #dedede; width:380px; height:auto; padding:20px; margin:20px 0 20px 2px;
+
+                header {
+
+                    > * { width:auto; @include inline-block; @include justified }
+
+                }
+
+                label { white-space:normal; text-transform:inherit;}
+
+                label:before { content:none; }
+                                
+                input[type="text"] { width:70%; }
+
+                hr { width:100%; }
+
+            }
+            
+            .field.action {
+
+                width:435px; min-height:27px; text-align:right;
+
+                a { text-transform:uppercase; text-align:center; margin-right:10px; color:$gray; }
+
+                a.save, a.remove { height:auto; @include round-corner; font-size:1em; cursor:pointer; padding:8px 16px; z-index:10; }
+                
+                a.remove { @include linear-gradient(#ffffff, #f7f7f7); @include round-corner; color:$dark-gray; width:200px;  text-transform:capitalize; border:solid 1px #dedede; -moz-box-shadow:#B2B2B2 0 1px 5px 0; -webkit-box-shadow:#B2B2B2 0 1px 5px 0; box-shadow:#B2B2B2 0 1px 5px 0; margin-right:79px; }
+
+                a.save { @include linear-gradient(#f1670f, #e15800); color:$white; width:100px; text-transform:uppercase; border:solid 1px #cb4f00; -moz-box-shadow:#B2B2B2 0 1px 5px 0; -webkit-box-shadow:#B2B2B2 0 1px 5px 0; box-shadow:#B2B2B2 0 1px 5px 0; }
+
+                a.save:hover { @include linear-gradient(#fd7a10, #f1670f);}
+            }
+        }
+
+        section#alerts fieldset.data .field, section#onlinePayments fieldset.data .field { width:380px; }
+
+        section#alerts {
+
+            select { 
+
+                @include inline-block; width:90px; height:20px; margin:0 5px; font-size:0.875em; border:solid 1px #dedede; }
+
+            label { 
+
+                @include inline-block; width:214px; color:$medium_gray;
+
+                em { font-weight:bold; @include inline-block; width:100%; }
+            }
+
+            input[type="checkbox"] { @include inline-block; width:auto; }
+
+            .field.fix { 
+
+                label { @include inline-block; width:318px; }
+            }
+
+            .description { margin-top:10px; }
+
+            .data {
+
+                header {
+
+                    height:25px; margin:0;
+
+                    p:first-child { margin-right:218px }
+                }
+
+                label { color:#4c4c4c; }
+
+                .field.checkbox { 
+
+                    label { width:auto; }
+                }
+            }
+        }
+
+        section#paperless {
+
+            label { width:290px; font-size:0.9em  }
+        }
+
+        section#onlinePayments {
+
+            .top { @include inline-block; 
+
+                label, input { width:auto; display:inline; }
+
+                label { font-size:0.9em }
+
+                h4 { font-family:Arial, Helvetica, sans-serif; margin-bottom:7px }
+            }
+
+            .data {
+
+                label { text-transform:uppercase; }
+
+                img { margin-bottom:15px; }
+
+                .field.checkbox {
+
+                    label { text-transform:none; }
+                }
+            }
+        }
+    }
+}
+
+.js form fieldset#congratulations { 
+
+    min-height:270px; padding:20px 0; background:url(../images/ao_registration_congratulations_image.png) no-repeat 460px 20px;
+    
+    h1, h3 { line-height:1.25em; }
+    
+    h3 { @include inline-block; width:400px; }
+    
+    .field { width:auto; display:block; margin-top:10px; margin-left:0; }
+    
+    input[type="submit"] { width:auto; padding:0 25px; }
+
+    nav a.complete { width:505px; background:red; }
+}
+
+//================================ main footer:
+
+body footer {
+    
+    @include inline-block; width:900px; padding:0 0 20px; background:#fff; line-height:24px; font-size:0.75em; font-weight:normal; color:$medium_gray; text-align:justify; 
+    
+    > * { width:auto; @include inline-block; vertical-align:middle; }
+    
+    nav { text-align:left }
+    
+    nav a { color:$dark-orange; text-decoration:none; }
+    
+    nav a:first-child { margin-right:5px; }
+    
+    nav a:last-child { margin-left:5px; }
+    
+    p { display:block; }
+    
+    img { float:right }
+}
+
+body hr { border:0; color:#e0e0e0; background-color:#e0e0e0; height:1px; }
+
+//================================ forms
+
+form {
+    
+    header {   
+        
+        position:relative;
+        
+        h2 { text-align:left; width:100%; padding-bottom:30px; }
+        
+        aside { position:absolute; right:0; top:0; white-space:nowrap; }
+    }
+
+    form { padding:5px 0; display:block; text-align:center; }
+}
+
+.fieldset_errors { color:$red; display:block; width:200px; text-align:right; background:#666666; padding:10px; }
+
+.field {
+    
+    @include inline-block; width:100%; padding:10px 0 0; position:relative;
+    
+    &.required {
+
+        label:before { color:#aaa; }
+        
+        &.completed label:before { color:green; content:url(../images/ao_registration_form_verified_check.png); }
+        
+        &.completed .tool_tip .mask { display:none; }
+    }   
+    
+    label { width:100%; display:block; margin-bottom:3px;  white-space:nowrap; color:$gray; font-weight:normal; text-transform:uppercase; font-size:0.75em; }
+    
+    label:before { @include inline-block; content:""; background:url(../images/ao_registration_form_validation_check.png) 0 0 no-repeat; width:22px; height:14px; }
+    
+    &.checkbox {
+        
+        label, input { @include inline-block; }
+        
+        label {
+
+            white-space:normal; width:auto; text-transform:inherit; font-size:0.875em;
+            
+            &:before { content:none; }
+        }
+
+        input { width:auto; }
+    }
+
+    &.field-with-errors {
+
+        label{ color:$red; }
+
+        label:before{ background-image:url(../images/ao_registration_form_error_check.png); }
+
+        input {
+            
+            border:solid 2px $red;
+
+            &:focus{border-color:#999; outline-color:$red;}
+        }
+        
+        &.tool_tip .mask { display:inline-block; }
+    }
+
+    &.select_field { margin-top:-8px; }
+    
+    input { 
+
+        border:2px solid #dedede; @include round-corner; padding:7px 1%; width:75%; margin-bottom:10px; font-size:1.2em; line-height:1.2em; font-weight:normal; color:#666; @include inner-shadow; font-size:0.875em; 
+
+        &:focus { border:solid 2px #666666; }
+    }
+
+    // input:focus { border:solid 2px #666666; }
+
+    .tool_tip .mask { display:inline-block; }
+
+    .tool_tip { 
+
+        position:absolute; top:-23px; right:-7px; z-index:10;
+        
+        .mask { width:16px; height:146px; background:#f2f2f2; position:absolute; top:2px; left:20px; }
+    }
+    
+    input[type='submit']{ @include linear-gradient(#f1670f, #e15800); display:block; width:140px; height:48px; @include round-corner; color:$white; text-transform:uppercase; cursor:pointer; border:solid 1px #cb4f00; -moz-box-shadow:#B2B2B2 0 1px 5px 0; -webkit-box-shadow:#B2B2B2 0 1px 5px 0; box-shadow:#B2B2B2 0 1px 5px 0; font-size:1.2em; }
+    
+    input:hover[type='submit'] { @include linear-gradient(#fd7a10, #f1670f); }
+    
+    select { border:1px #333 solid; border-radius:5px; width:90%; color:#666; font-weight:900; font-size:1.2em; line-height:1.2em; height:40px; padding-top:3px; }
+
+    a.tip { // the tooltip icon:
+        
+        .js & { 
+
+            display:block; padding-left:26px; height:50px; position:absolute; left:96%; top:34px; background:url(../../images/tip.png) 0 0 no-repeat; overflow:hidden; width:0;
+            
+            &:focus { background-position:-50px 0; }
+        }
+
+        &.active {
+            
+            background-position:-100px 0;
+            
+            &:focus { background-position:-150px 0; }
+            
+            &:after {
+                content:'▲';//&#9650;
+                position:absolute;
+                display:block;
+                bottom:-5px;
+                left:0;
+                color:#666;
+                font-size:1.6em;
+                transform:scale(2,1); /* W3C */
+            -webkit-transform:scale(2,1); /* Safari and Chrome */
+            -moz-transform:scale(2,1); /* Firefox */
+            -ms-transform:scale(2,1); /* IE 9 */
+            -o-transform:scale(2,1); /* Opera */
+            }
+        }
+    }
+}
+
+.field.digits {
+    
+    width:41%; float:left;
+
+    input { width:85%; @include inline-block; height:auto;}
+}
+
+//================================ Form slideover support
+
+.js form {
+
+    white-space:nowrap; display:block; width:100%; overflow:hidden; position:relative;
+
+    > * { white-space:normal; }
+
+    fieldset { 
+
+        @include inline-block; vertical-align:top; width:100%;
+
+        // @include justified; @include inline-block; vertical-align:top; width:100%; 
+
+        // > * { @include inline-block; @include justified; vertical-align:top; width:45%; }
+    }
+}
+
+//================================ #card_imagery
+#card_imagery {
+
+    .front { display:inline; }
+
+    .back { display:none}
+
+    &.focus {
+
+        .front { display:none; }
+
+        .back { display:inline; }
+    }
+}
+
+//================================ #form input tooltip
+
+.tool_tip { 
+
+    img.validation_tooltip { display:none; }
+
+    // &.focus img.validation_tooltip { display:inline;}
+
+    :focus + & img, .focus + & img { display:inline !important; }
+}
+
+
+
+//================================== #fieldset overrides
+
+fieldset .field.checkbox a:hover { text-decoration:underline; }
+
+fieldset .field.checkbox { 
+
+    label { font-size:12px }
+
+}
+
+#profile, #security, #preferences { 
+
+    width:63%; padding-left:37%;
+
+    .field { width:560px; }
+
+}
+
+#preferences {
+
+    section header { cursor:pointer; }
+
+    fieldset { display:none; }
+
+    section.opened { background:url(../images/ao_registration_preferences_active_preference_bg.png) repeat }
+
+}
+
+#profile_widget {
+
+    position:absolute; top:0; left:1px; display:none; background:#fff; min-height:500px;
+
+    h4.security {color:$dark-orange;}
+
+    h4.profile {color:$yellow;}
+
+    h4.preferences {color:$blue-gray;}
+
+    .profile-box { 
+
+        @include inline-block; font-weight:normal; margin-bottom:25px; color:$medium_gray; width:260px; height:auto; @include linear-gradient(#f9f9f9, #f7f7f7); @include round-corner; border:1px solid #dedede;
+
+        h3 { font-size:1.5em; padding:15px 10px 0; } 
+        
+        p { 
+
+            font-size:0.85em; padding:10px 10px 20px; text-transform:uppercase; 
+
+            span { margin-left:10px; }   
+        }
+
+        a { @include inline-block; text-transform:uppercase; font-size:0.95em; width:240px; height:25px; padding:15px 10px 10px; background:url(../images/ao_registration_profile_box_arrow_down.png) no-repeat 230px center #eeeeee; @include round-corner-bottom; @include inner-shadow-top }
+    }
+
+    .promo-box { 
+
+        @include inline-block; width:250px; @include inline-block; text-align:left; vertical-align:middle;
+        
+        .js & {display:none;}
+
+        h4 { @include inline-block; width:180px; font-size:1.1em; margin-bottom:5px; }
+        
+        p { @include inline-block; width:180px; font-size:0.875em; line-height:1.25em; } 
+        
+        img { @include inline-block; float:left; margin-right:10px; }
+    }
+}
+
+.cover { position:absolute; @include corner-to-corner; background:#fff url(../images/wait.gif) 50% 250px no-repeat; display:none; }
+
+//======== IE7 hack festival:
+
+.lt-ie8.js body {
+
+    header { 
+        
+        h1 { font-size:2.69em; color:$white; @include inline-block; font-weight:normal; margin-left:108px; margin-top:-41px; }
+    }
+
+    footer {
+
+        padding:15px 0 20px;
+        
+        img { margin-top:-30px; }
+
+    }
+}   
+
+.lt-ie8.js form {
+
+    display:block; width:900px; text-align:left; position:relative; zoom:1; overflow:hidden;
+
+    .form_contents {
+
+        width:10000px;
+
+        .field {
+
+            &.checkbox { font-size:0.875em; text-transform:none; }
+
+            &.required {
+                
+                &.completed .tool_tip .mask { display:none; }
+            }
+
+            &.field-with-errors {
+
+                &.tool_tip .mask { @include inline-block; }
+            }
+
+            .tool_tip .mask { @include inline-block; }
+
+            .tool_tip {
+                
+                position:absolute !important; top:-23px !important; right:-7px !important; z-index:10 !important;
+                
+                .mask { width:16px !important; height:146px !important; background:#f2f2f2 !important; position:absolute !important; top:2px !important; left:20px !important; }
+            }
+        }
+
+        fieldset .field.checkbox { font-size:0.875em !important; }
+
+        fieldset {
+
+            width:570px !important; padding-left:330px !important; position:relative; zoom:1; 
+
+            header { width:300px;}
+
+            .field {zoom:1; width:300px; position:relative;}
+
+            input { width:252px;}
+
+            input[type="checkbox"] { width:auto !important; border:none!important; outline:none!important; }
+
+        }
+
+        fieldset#profile { 
+
+            article input { width:267px !important; }
+
+            article input[type="submit"] { width:140px !important; height:48px !important; }
+        }
+
+        fieldset#security {
+
+            select { width:224px !important; height:38px !important; margin-top:10px !important; }
+
+            .field {
+            &.required {
+
+                label {background:$dark-gray !important;}
+
+                &.completed label {background:$light-green !important; }
+                }
+            }
+
+            label { @include inline-block; font-size:1.5em !important; width:42px !important; height:33px !important; padding-top:9px !important; color:$white !important; background:$gray !important; @include circle; vertical-align:middle !important; text-align:center !important; }
+
+            input { width:239px !important;  }
+
+            input[type="submit"] { width:140px !important; height:48px !important; }
+
+        }
+
+        fieldset#preferences article section .field.action a.save { width:50px !important; }
+
+        fieldset#preferences article section .field.action a.remove { width:178px !important; }
+
+        fieldset#preferences article section .data .field.checkbox label { font-size:12px; }
+
+        fieldset#congratulations { 
+            
+            .field {
+
+                input[type="submit"] { width:270px!important; padding:0 25px; } 
+
+            }
+
+        }
+
+        fieldset#preferences { 
+    
+            font-size:0.875em;
+
+            aside {  
+               .promo-box {  
+                    h4 { color:$blue-gray!important; }
+               } 
+            }
+
+            article { 
+                
+                @include inline-block;
+                
+                h1 { margin-left:14px!important; }
+
+                p {  width:400px!important; line-height:1.25em!important; }
+
+                p.sectionDesc { margin-left:14px!important; margin-bottom:25px!important; }
+                
+                hr { width:519px!important; margin:5px 0 0!important;}
+
+                fieldset { padding-left:0 !important; }
+
+                section {
+            
+                    margin-top:0!important; margin-bottom:10px!important; width:444px!important; height:auto!important; @include inline-block; text-align:left!important; position:relative!important; vertical-align:middle!important; padding-top:25px!important; padding-left:75px!important; padding-bottom:35px!important;
+
+                    figure { position:absolute; top:25px!important; left:11px!important; }
+
+                    header {
+
+                        h2 { padding-bottom:1px!important; }
+
+                        p { @include inline-block; margin-bottom:3px!important; }
+
+                        button { position:absolute; width:82px!important; height:32px!important; top:0!important; right:-125px!important; border:none!important; text-indent:-9999999px!important; cursor:pointer!important; background:url(../images/ao_registration_preferences_add_button.png) no-repeat top!important; }
+
+                        button:hover { background-position:bottom!important; }
+
+                        a.trigger { text-transform:uppercase!important; font-size:0.875em!important; }
+                    }
+
+                    &.edited header button { background:url(../images/ao_registration_preferences_edit_button.png) no-repeat top!important; }
+
+                    &.edited header button:hover { background-position:bottom!important; }
+
+                    .data {
+
+                        background-color:#f2f2f2 ; @include round-corner; border:1px solid #dedede!important; width:380px!important; height:auto!important; padding:20px !important; margin:20px 0 20px 2px !important;
+
+                        header {
+
+                            > * { width:380px !important; @include inline-block; @include justified }
+
+                        }
+
+                        label { white-space:normal!important; text-transform:inherit!important;}
+
+                        label:before { content:none!important; }
+                                        
+                        input[type="text"] { width:278px!important; }
+
+                        hr { width:380px!important; }
+
+                    }
+                    
+                    .field.checkbox { 
+
+                        label { font-size:1em !important; text-transform:none !important; }
+
+                    }
+
+                    .action {
+
+                        width:475px!important; min-height:27px!important; text-align:right!important; margin-left:-40px!important;
+
+                        a { text-transform:uppercase!important; text-align:center!important; margin-right:10px!important; color:$gray!important; }
+
+                        a.save, a.remove { @include inline-block; height:auto !important; @include round-corner; font-size:1em !important; cursor:pointer !important; padding:8px 16px !important; z-index:10!important; }
+                        
+                        a.remove { @include linear-gradient(#ffffff, #f7f7f7); @include round-corner; color:$dark-gray !important; width:200px !important;  text-transform:capitalize!important; border:solid 1px #dedede !important; -moz-box-shadow:#B2B2B2 0 1px 5px 0; -webkit-box-shadow:#B2B2B2 0 1px 5px 0; box-shadow:#B2B2B2 0 1px 5px 0; margin-right:79px !important; }
+
+                        a.save {
+                            
+                            @include linear-gradient(#f1670f, #e15800); color:$white !important; width:100px !important; text-transform:uppercase !important; border:solid 1px #cb4f00 !important; -moz-box-shadow:#B2B2B2 0 1px 5px 0; -webkit-box-shadow:#B2B2B2 0 1px 5px 0; box-shadow:#B2B2B2 0 1px 5px 0;
+                        
+                            &:hover { @include linear-gradient(#fd7a10, #f1670f); }
+                        }
+                        
+                        // a.save:hover { @include linear-gradient(#fd7a10, #f1670f);}
+                    }
+                }
+
+                section#alerts fieldset.data .field, section#onlinePayments fieldset.data .field { width:380px!important; }
+
+                section#alerts {
+
+                    select { @include inline-block; width:90px!important; height:20px!important; margin:0 5px!important; font-size:0.875em!important; border:solid 1px #dedede!important; }
+
+                    label { 
+
+                        @include inline-block; width:214px!important; color:$medium_gray!important;
+
+                        em { font-weight:bold!important; @include inline-block; width:214px!important; text-transform:none; }
+                    }
+
+                    input[type="checkbox"] { @include inline-block; width:auto!important; border:0; }
+
+                    .field.fix { 
+
+                        label { @include inline-block; width:318px!important; }
+                    }
+
+                    .description { margin-top:10px!important; }
+
+                    .data {
+
+                        header {
+
+                            width:444px; height:25px!important; margin:0!important;
+
+                            // p { @include inline-block; }
+
+                            // p:first-child { margin-right:218px!important; }
+
+                            p { @include inline-block; width:50px!important; float:left; }
+
+                            p:first-child { margin-right:198px!important; width:100px!important; }
+                        }
+
+                        label { color:#4c4c4c!important; }
+
+                        .field.checkbox { 
+
+                            label { width:auto!important; font-size:12px; }
+
+                            input[type="checkbox"] { margin-top:-2px; vertical-align:bottom; }
+                        }
+                    }
+                }
+
+                section#paperless {
+
+                    label { width:290px!important; font-size:0.9em!important; text-transform:none!important;  }
+
+                    .data { @include inline-block; float:left!important; }
+                }
+
+                section#onlinePayments {
+
+                    .top { @include inline-block; 
+
+                        label, input { width:auto; display:inline!important; }
+
+                        label { font-size:0.9em!important; }
+
+                        h4 { font-family:Arial, Helvetica, sans-serif; margin-bottom:7px!important; }
+                    }
+
+                    .data {
+
+                        label { text-transform:uppercase!important; }
+
+                        img { margin-bottom:15px!important; }
+
+                        .field.checkbox {
+
+                            label { text-transform:none!important;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 

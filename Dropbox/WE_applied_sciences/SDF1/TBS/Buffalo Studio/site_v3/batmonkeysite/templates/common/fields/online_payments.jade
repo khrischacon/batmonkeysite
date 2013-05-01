@@ -1,0 +1,40 @@
+section#onlinePayments   
+        
+  figure
+    img(src='images/ao_registration_preferences_online_payments.png', alt="Online Payments")
+
+  header
+    h2 Online Payments
+    p Pay online from your bank account.
+    a.trigger(href="#") &#9658; SHOW ONLINE PAYMENT DETAILS
+    button Add / Edit
+
+  fieldset.data
+    .field.top
+      h4 ACCOUNT TYPE
+      input(type="radio", id="checking",name="account_type", value="checking")
+      label(for="checking") Checking
+      input(type="radio", id="savings",name="account_type", value="savings")
+      label(for="savings") Savings
+    
+    img(src="images/ao_registration_preferences_online_payments_check.png", alt="check")
+    
+    .field
+      label(for="routing_number") Routing Number
+      input(type="text", id="routing_number",name="routing_number")
+    .field
+      label(for="account_number") Account Number
+      input(type="text", id="account_number",name="account_number")
+    .field
+      label(for="confirm_account_number") Confirm Account Number
+      input(type="text", id="confirm_account_number",name="confirm_account_number")
+    .field.checkbox
+      input(type="checkbox", name="agree_terms", id="agree_terms")
+      label(for="agree_terms") 
+        | I agree to the Online Payments 
+        a(href="#") Terms and Conditions
+        
+  fieldset  
+    .field.action
+      a Cancel
+      a(href="#").save Save

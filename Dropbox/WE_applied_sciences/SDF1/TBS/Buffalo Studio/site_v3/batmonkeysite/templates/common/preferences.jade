@@ -1,0 +1,35 @@
+fieldset#preferences
+
+  article
+
+    h1 Personalize Your Account
+    p.sectionDesc Spend a few moments setting your preferences to get the most from your Account Online.
+    hr
+
+    include fields/paperless_billing.jade
+    hr
+
+    include fields/account_alerts.jade        
+    hr
+    
+    include fields/online_payments.jade
+    hr
+
+    .field.terms.checkbox.required(data-validate="checked", data-error-message="You must agree to the Terms and Conditions")
+        input(type="checkbox", name="agree_terms", id="agree_terms")
+        label(for="agree_terms") 
+          | I agree to the 
+          a(data-modal-id="termsContent") Terms and Conditions
+          #termsContent.modal
+            h1 Account Online Terms and Conditions
+              a PRINT
+            hr
+            p Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+
+            p Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+            p Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit.
+
+    .field
+        input.button(type="submit", value="Register")
+

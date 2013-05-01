@@ -1,0 +1,81 @@
+section#alerts     
+        
+  figure
+    img(src='images/ao_registration_preferences_account_alerts.png', alt="Account Alerts")
+
+  header
+    h2 Account Alerts
+    p Receive alerts by email and text message.
+    a.trigger(href="#") &#9658; SHOW ACCOUNT ALERT DETAILS 
+    button Add / Edit
+
+  fieldset.description
+    p  Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortissociis natoque penatibus et magnis parturient.
+
+  fieldset.data
+    header
+      p Send alerts for
+      p email
+      p sms
+    hr
+    .field
+      label <em>Close to Credit Limit</em> if my balance to credit limit is within:
+      select
+         option(value='$200') $200
+         option(value='$300') $300
+         option(value='$400') $400  
+      input(type="checkbox", name="email")
+      input(type="checkbox", name="sms")
+    hr
+    .field
+      label <em>High Balance</em> if my balance is higher than:
+      select
+        option(value='$2000') $2000
+        option(value='$3000') $3000
+        option(value='$4000') $4000  
+      input(type="checkbox", name="email")
+      input(type="checkbox", name="sms")
+    hr 
+    .field
+      label <em>Current Balance</em> of my account every:
+      select
+        option(value='Month') Month
+        option(value='Week') Week
+        option(value='Year') Year 
+      input(type="checkbox", name="email")
+      input(type="checkbox", name="sms")
+    hr
+    .field
+      label <em>Payment Due</em> if a payment is due within:
+      select
+        option(value='1 Week') 1 Week
+        option(value='2 Week') 2 Week
+        option(value='3 Week') 3 Week  
+      input(type="checkbox", name="email")
+      input(type="checkbox", name="sms")
+    hr
+    .field.fix
+      label <em>Payment Past Due</em>
+      input(type="checkbox", name="email")
+      input(type="checkbox", name="sms")
+    hr
+    .field.fix
+      label <em>Payment Posted</em>
+      input(type="checkbox", name="email")
+      input(type="checkbox", name="sms") 
+    hr
+    .field.fix
+      label <em>Statement Ready</em>
+      input(type="checkbox", name="email")
+      input(type="checkbox", name="sms") 
+    hr
+    .field.checkbox.required
+      input(type="checkbox", name="agree_terms", id="agree_terms")
+      label(for="agree_terms") 
+        | I agree to all Account Alerts 
+        a(href="#") Terms and Conditions
+
+  fieldset
+    .field.action
+      a Cancel
+        a(href="#").save Save
